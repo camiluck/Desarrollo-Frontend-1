@@ -1,0 +1,255 @@
+/* Semana 3 - Optimizando la tienda con CSS responsivo */
+/* Camila Luck - PFY2201 */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #2b2b2b;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+#site-header {
+    background-color: #1b1f3b;
+    color: #ffffff;
+    text-align: center;
+    padding: 32px 16px;
+    border-bottom: 4px solid #ff6b35;
+}
+
+#site-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#site-header p {
+    font-size: 1rem;
+    color: #cfd2f0;
+    margin-top: 8px;
+}
+
+/* Navegación con Flexbox */
+#main-nav {
+    background-color: #262b52;
+    padding: 12px 0;
+}
+
+#main-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+#main-nav li {
+    margin: 0 16px;
+}
+
+#main-nav li a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+#main-nav li a:hover {
+    background-color: #ff6b35;
+    color: #1b1f3b;
+}
+
+/* Sección de productos */
+.productos {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.productos h2 {
+    font-size: 1.8rem;
+    color: #1b1f3b;
+    border-bottom: 3px solid #ff6b35;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
+
+/* Uso de CSS Grid para acomodar las tarjetas de producto */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #dcdce6;
+    padding: 20px;
+    text-align: left;
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border: 2px solid #ff6b35;
+    margin-bottom: 12px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: #1b1f3b;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.product-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.product-link:hover {
+    background-color: #fdeee5;
+}
+
+/* Selector nth-child para alternar el color de las tarjetas */
+.product-card:nth-child(odd) {
+    background-color: #fff8f4;
+}
+
+.product-card:nth-child(even) {
+    background-color: #f4f8ff;
+}
+
+/* Ficha de detalle de cada producto */
+.detalle-producto {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+}
+
+.detalle-producto h2 {
+    font-size: 1.8rem;
+    color: #1b1f3b;
+    border-bottom: 3px solid #ff6b35;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
+
+.detalle-card {
+    background-color: #ffffff;
+    border: 1px solid #dcdce6;
+    border-left: 6px solid #ff6b35;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.detalle-card h3 {
+    color: #1b1f3b;
+    margin-bottom: 10px;
+}
+
+.detalle-card p {
+    margin-bottom: 8px;
+    color: #444444;
+}
+
+.volver-link {
+    display: block;
+    margin-top: 8px;
+    color: #ff6b35;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Footer con Flexbox */
+.site-footer {
+    background-color: #1b1f3b;
+    color: #cfd2f0;
+    text-align: center;
+    padding: 28px 16px;
+    margin-top: 40px;
+    border-top: 4px solid #ff6b35;
+}
+
+.site-footer h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.site-footer p {
+    margin-bottom: 8px;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 12px;
+}
+
+.social-list li {
+    margin: 0 10px;
+}
+
+.social-list li a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.social-list li a:hover {
+    color: #ff6b35;
+}
+
+.social-list li:first-child a {
+    color: #ff6b35;
+}
+
+/* ---- Media queries para diseño responsivo ---- */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #site-header h1 {
+        font-size: 1.8rem;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #main-nav li {
+        margin: 4px 0;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .social-list {
+        flex-direction: column;
+    }
+
+    .social-list li {
+        margin: 4px 0;
+    }
+}
